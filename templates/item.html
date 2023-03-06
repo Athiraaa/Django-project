@@ -1,0 +1,98 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Garelick</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'item/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'item/css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'item/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'item/images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'item/css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <style>
+   .button {
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+}
+      .button1 
+      /* {background-color: #4CAF50; */
+      } /* Green */
+   </style>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <!-- end banner -->
+      <!-- about -->
+      <!-- <div id="about"  class="about"> -->
+         <section class="tm-mb-1"  id="about">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class="col-xl-7 col-lg-7 col-md-12 padding_lert">
+                  <div class="about_img">
+                     <figure><img src="{{pr.img.url}}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-xl-5 col-lg-5 col-md-12">
+                  <div class="about_text">
+                     <div class="titlepage">
+                        <h2>{{pr.name}}</h2>
+                        <p>{{pr.desc}} <br>  price : {{pr.price}}</p>
+                        <P> stock:{{pr.stock}}</P>
+{% if pr.stock <= 0 %}    
+<h3 style="color:red"> Out of Stock</h3>  
+                {% else %} 
+                        <a href="{%url 'addcart' pr.id %}"  button class="button button1">Add to Cart</button> </a>
+{% endif %}                       
+                     </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- end about -->
+      <!-- our -->
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'item/js/jquery.min.js' %}"></script>
+      <script src="{% static 'item/js/popper.min.js' %}"></script>
+      <script src="{% static 'item/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'item/js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'item/js/plugin.js' %}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'item/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+      <script src="{% static 'item/js/custom.js' %}"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   </body>
+</html>
+{% endblock %}

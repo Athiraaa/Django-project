@@ -1,0 +1,103 @@
+{% load static %}
+{% block content %}
+{% endblock %}
+<!DOCTYPE html>
+<!--
+Template Name: Spourmo
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Food world</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'home/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<style>
+.header {
+  padding: 10px;
+  text-align: center;
+  background:cover ;
+  color: white;
+  font-size: 10px;
+  margin: 0px;
+}</style>
+
+
+<body id="top">
+  
+
+  <div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+
+    <div class="fl_left">
+      <ul class="nospace">
+        <li><i class="fas fa-mobile-alt rgtspace-5"></i> +00 (123) 456 7890</li>
+        <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrapper row1">
+  <section id="ctdetails" class="hoc clear"> 
+
+    <ul class="nospace clear">
+      <li class="one_quarter  first">
+        <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></div>
+      </li>
+      <li class="one_quarter ">
+        <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span></div>
+      </li>
+      <li class="one_quarter">
+        <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Mon. - Sat.:</strong> 08.00am - 18.00pm</span></div>
+      </li>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+
+<div class="image" style="background-image:url({% static 'home/images/demo/backgrounds/01.png' %});">  
+  </div>
+  
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left">
+       
+      <div class="header">
+        
+        <div class="wrapper row=2"><h1><a href="/"> &nbsp; Shopify &nbsp;</a></h1>
+    </div>
+     </div>
+    </div>
+    <nav id="mainav" class="fl_right"> 
+
+      <ul class="clear">
+        <li class="active"><a href="/">Home</a></li>
+      
+       <li><a class="active" href="{% url 'cartDetails' %}">  <i class="fa fa-shopping-cart" style="font-size:24px"></i>&nbsp;({{itc}})</a></li>
+        
+           <li><a class="active" href="{% url 'user_login' %}">Login</a></li>
+            
+            <li><a class="active" href="{% url 'user_register' %}">Register</a></li>
+            <li><a class="active" href="{% url 'user_logout' %}">Logout</a></li>
+            
+            
+              
+              
+      </ul>
+    </nav>
+  </header>
+  </div>
+</div>
+{% block title %}
+{% endblock %}
+</body>
+</html>
